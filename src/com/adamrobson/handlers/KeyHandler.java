@@ -13,15 +13,15 @@ public class KeyHandler {
         File dataDir = new File(appdataPath);
         File keyFile = new File(keyFilePath);
 
-        if(!dataDir.exists()){
+        if (!dataDir.exists()) {
             // Directory does not exist, create it.
-            if(!dataDir.mkdir()){
+            if (!dataDir.mkdir()) {
                 System.err.println("Error Creating Directory");
                 return false;
             }
         }
 
-        if(!keyFile.exists()){
+        if (!keyFile.exists()) {
             // Api Keys File does not exist, create it.
             try {
                 BufferedWriter writer = new BufferedWriter(new FileWriter(keyFile));
@@ -32,7 +32,7 @@ public class KeyHandler {
             }
         }
 
-        if(!importKeys(keyFile)){
+        if (!importKeys(keyFile)) {
             System.err.println("Error fetching API Keys. Please check your keys: " + keyFilePath);
             return false;
         }
@@ -40,12 +40,12 @@ public class KeyHandler {
         return true;
     }
 
-    private boolean importKeys(File keyFile){
+    private boolean importKeys(File keyFile) {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(keyFile));
             String line = reader.readLine();
-            while((line != null) && (!line.equals("ReplaceKeyHere"))){
-                if(!line.startsWith("#")){
+            while ((line != null) && (!line.equals("ReplaceKeyHere"))) {
+                if (!line.startsWith("#")) {
                     System.out.println(line);
                     metOfficeKey = line;
                 }
@@ -59,7 +59,7 @@ public class KeyHandler {
         return metOfficeKey != null && otherKey != null;
     }
 
-    public String getMetOfficeKey(){
+    public String getMetOfficeKey() {
         return metOfficeKey;
     }
 

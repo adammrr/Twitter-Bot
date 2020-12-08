@@ -17,7 +17,7 @@ public class Main {
         System.out.println("Init: Checking Local Files");
         // TODO: Add Twitter Keys to KeyHandler
         KeyHandler keyHandler = new KeyHandler();
-        if(!keyHandler.validateKeys()){
+        if (!keyHandler.validateKeys()) {
             System.exit(1);
         }
 

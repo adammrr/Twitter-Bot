@@ -7,14 +7,14 @@ import java.net.URL;
 public class DownloadHandler {
     private final String dataDirPath = System.getenv().get("APPDATA") + "\\.twitterbot\\data";
 
-    public void downloadFileFromURL(String url, String fileSaveName){
+    public void downloadFileFromURL(String url, String fileSaveName) {
         try {
             File fileDestDir = new File(dataDirPath);
             File fileDest = new File(fileDestDir + "\\" + fileSaveName);
 
-            if(!fileDestDir.exists()){
+            if (!fileDestDir.exists()) {
                 // Directory does not exist, create it.
-                if(!fileDestDir.mkdir()){
+                if (!fileDestDir.mkdir()) {
                     System.err.println("Error Creating Directory");
                 }
             }

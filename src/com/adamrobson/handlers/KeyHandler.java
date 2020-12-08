@@ -58,5 +58,10 @@ public class KeyHandler {
 
         return metOfficeKey != null && otherKey != null;
     }
+
+    public String getMetOfficeKey(){
+        return metOfficeKey;
+    }
+
 }
 
